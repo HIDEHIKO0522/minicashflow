@@ -26,16 +26,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
-|income1|integer|default: ""|
-|income2|integer|default: ""|
-|income3|integer|default: ""|
-|income4|integer|default: ""|
-|income5|integer|default: ""|
-|income6|integer|default: ""|
-|income7|integer|default: ""|
-|income8|integer|default: ""|
-|income9|integer|default: ""|
-|income10|integer|default: ""|
+|income1|integer|default: "0"|
+|income2|integer|default: "0"|
+|income3|integer|default: "0"|
+|income4|integer|default: "0"|
+|income5|integer|default: "0"|
+|income6|integer|default: "0"|
+|income7|integer|default: "0"|
+|income8|integer|default: "0"|
+|income9|integer|default: "0"|
+|income_total|integer|default: ""|
 |year|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
@@ -48,21 +48,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
-|expense1|integer|default: ""|
-|expense2|integer|default: ""|
-|expense3|integer|default: ""|
-|expense4|integer|default: ""|
-|expense5|integer|default: ""|
-|expense6|integer|default: ""|
-|expense7|integer|default: ""|
-|expense8|integer|default: ""|
-|expense9|integer|default: ""|
-|expense10|integer|default: ""|
-|expense11|integer|default: ""|
-|expense12|integer|default: ""|
-|expense13|integer|default: ""|
-|expense14|integer|default: ""|
-|expense15|integer|default: ""|
+|expense1|integer|default: "0"|
+|expense2|integer|default: "0"|
+|expense3|integer|default: "0"|
+|expense4|integer|default: "0"|
+|expense5|integer|default: "0"|
+|expense6|integer|default: "0"|
+|expense7|integer|default: "0"|
+|expense8|integer|default: "0"|
+|expense9|integer|default: "0"|
+|expense_total|integer|default: ""|
 |year|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
