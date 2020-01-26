@@ -132,7 +132,10 @@ nav.menubar ul li:not(:last-child):after {
 }
 
 /* メニューバーのリンク */
-nav.menubar a { text-decoration: none; }
+nav.menubar a { 
+  text-decoration: none;
+  margin-right: 20px;
+ }
 
 /* メニューバーのリンク（未訪問） */
 nav.menubar a:link { color: #ccc; }
@@ -205,8 +208,9 @@ aside#sidebar li {
   margin-bottom: 0.3em;
 }
 /* 入力フォームのtext_field */
-input{
+input {
   text-align: right; 
 }
+
 
 
