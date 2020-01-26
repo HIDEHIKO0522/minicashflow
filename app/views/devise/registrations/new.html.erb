@@ -5,32 +5,30 @@
 
 
   <div class="field">
-    <%= f.label :_family_name %> <br />
+    <%= f.label :name,"氏名(全角)" %> <br />
     <%= f.text_field :family_name, autofocus: true %>
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :name_kana,"氏名(カナ)" %> <br />
+    <%= f.text_field :family_name_kana, autofocus: true %>
+     <%= f.text_field :first_name_kana, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :_first_name %> <br />
-    <%= f.text_field :family_name, autofocus: true %>
-  </div>
-
-    <div class="field">
-    <%= f.label :_family_name_kana %> <br />
-    <%= f.text_field :family_name, autofocus: true %>
-  </div>
-
-    <div class="field">
-    <%= f.label :_first_name_kana %> <br />
-    <%= f.text_field :family_name, autofocus: true %>
+    <%= f.label :employee_number,"社員番号" %> <br />
+    <%= f.text_field :employee_number, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email,"eメール" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password,"パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -38,7 +36,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation,"パスワード（確認）" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
