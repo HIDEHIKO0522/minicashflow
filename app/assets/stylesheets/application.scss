@@ -89,9 +89,7 @@ aside#sidebar {
     }
   }
 }
-.text_btn{
-  text-align: right; 
-}
+
 /* ヘッダー */
 header {
   border-top: 4px solid #6bb;
@@ -190,8 +188,6 @@ ul.toolbar li:not(:last-child):after {
 }
 
 /* サイドバー */
-
-
 aside#sidebar h2 {
   color: #080;
   font-weight: bold;
@@ -207,6 +203,10 @@ aside#sidebar ul {
 
 aside#sidebar li {
   margin-bottom: 0.3em;
+}
+/* 入力フォームのtext_field */
+input{
+  text-align: right; 
 }
 
 
