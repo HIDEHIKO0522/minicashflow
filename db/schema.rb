@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_091631) do
+ActiveRecord::Schema.define(version: 2020_01_27_062316) do
+
+  create_table "flows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "year_month_day", null: false
+    t.integer "income1", default: 0
+    t.integer "income2", default: 0
+    t.integer "income3", default: 0
+    t.integer "income4", default: 0
+    t.integer "income5", default: 0
+    t.integer "income6", default: 0
+    t.integer "income7", default: 0
+    t.integer "income_total", null: false
+    t.integer "expense1", default: 0
+    t.integer "expense2", default: 0
+    t.integer "expense3", default: 0
+    t.integer "expense4", default: 0
+    t.integer "expense5", default: 0
+    t.integer "expense6", default: 0
+    t.integer "expense7", default: 0
+    t.integer "expense8", default: 0
+    t.integer "expense_total", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
