@@ -13,11 +13,11 @@
           </tr>
       
         <tr>
-          <th><%= label :income1, "売上収入（振込）" %></th>
+          <th><%= label :income1, "売上入金（振込/現金）" %></th>
           <td><%= text_field :number, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
-          <th><%= label :income2, "売上収入（手形）" %></th>
+          <th><%= label :income2, "売上入金（手形決済）" %></th>
           <td><%= text_field :income2, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
           <td><%= text_field :income3, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
-          <th><%= label :income4, "銀行借入" %></th>
+          <th><%= label :income4, "借入金" %></th>
           <td><%= text_field :income4, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
