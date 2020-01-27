@@ -74,12 +74,22 @@ aside#sidebar {
     .main_flow{
       width: 900px;
       height:600px; 
+      position: relative; 
 
       .main_flow_income{
         width: 420px;
-        height:500px;
+        height:400px;
         margin-right: 20px;
-        float: left;
+        float: left;     
+      }
+      .main_flow_termflow{
+        width: 420px;
+        height:180px; 
+        position: absolute;
+        left: 0;
+        right: 280px;
+        top: 420px;
+        bottom :0;
       }
       .main_flow_expense{
         width: 420px;
