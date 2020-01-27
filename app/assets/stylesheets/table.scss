@@ -34,3 +34,38 @@ table.thread td, table.attr th {
 }
 
 
+
+table.list, table.attr2 {
+  font-size: 90%;
+  width: 100%;
+
+}
+
+table.list th, table.attr2 th {
+  background-color:#38aef0;
+  color: white;
+  font-weight: normal;
+}
+
+table.list td, table.list th,
+table.attr2 td, table.attr2 th {
+  padding: 4px;
+  border: thin #000 solid;  
+}
+
+table.list th {
+  text-align: left;
+}
+
+table.attr2 th {
+  text-align: right;
+}
+
+table.list td, table.attr2 td {
+  background-color: #CCFFFF;
+  text-align: center;
+}
+
+table.thread td, table.attr2 th {
+  text-align: center;
+}
