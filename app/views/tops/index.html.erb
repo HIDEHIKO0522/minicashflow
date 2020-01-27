@@ -11,10 +11,10 @@
             <th>項目</th>
             <th>金額</th>     
           </tr>
-      
+        </thead>      
         <tr>
           <th><%= label :income1, "売上入金（振込/現金）" %></th>
-          <td><%= text_field :number, size: 8, class:"input" %>円</td>
+          <td><%= text_field :income1, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income2, "売上入金（手形決済）" %></th>
@@ -46,6 +46,7 @@
         </tr>
       </table>
     </div>
+
     <div class="main_flow_expense">
       <table class="attr">
           <colgroup>
@@ -92,5 +93,32 @@
           </tr>
         </table>        
       </div>
-  </div>
+
+      <div class="main_flow_termflow">
+        <table class="attr2">
+          <colgroup>
+              <col style="width:55%;">
+              <col style="width:45%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>金額</th>     
+            </tr>
+          </thead>  
+          <tr>
+            <th><%= label :termflow1, "指定期間前の収支残高①" %></th>
+            <td><%= text_field :termflow1, size: 8, class:"input" %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :termflow2, "指定期間中の収支額②" %></th>
+            <td><%= text_field :termflow2, size: 8, class:"input" %>円</td>         
+          </tr>
+          <tr>
+            <th><%= label :termflow3, "指定期間後の収支残高(①＋②）" %></th>
+            <td><%= text_field :termflow3, size: 8, class:"input" %>円</td>        
+          </tr>
+        </table>
+      </div>          
+</div>
  
