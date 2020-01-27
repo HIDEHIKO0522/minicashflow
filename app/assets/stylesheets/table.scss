@@ -1,3 +1,4 @@
+/* new,editでのフォーム */
 table.list, table.attr {
   font-size: 90%;
   width: 100%;
@@ -26,7 +27,8 @@ table.attr th {
 
 table.list td, table.attr td {
   background-color: #cee;
-  text-align: center;
+  text-align: right;
+  padding-right: 20px;
 }
 
 table.thread td, table.attr th {
@@ -34,7 +36,7 @@ table.thread td, table.attr th {
 }
 
 
-
+/* showでのフォーム */
 table.list, table.attr2 {
   font-size: 90%;
   width: 100%;
@@ -50,6 +52,7 @@ table.list th, table.attr2 th {
 table.list td, table.list th,
 table.attr2 td, table.attr2 th {
   padding: 4px;
+  text-align: right;
   border: thin #000 solid;  
 }
 
@@ -63,7 +66,8 @@ table.attr2 th {
 
 table.list td, table.attr2 td {
   background-color: #CCFFFF;
-  text-align: center;
+  text-align: right;
+  padding-right: 20px;
 }
 
 table.thread td, table.attr2 th {

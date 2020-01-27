@@ -1,5 +1,7 @@
-
-  <div class="main_flow">
+<div class="main_flow">
+    <div class="registration">
+      <%= @flow.year_month_day %>
+    </div>
     <div class="main_flow_income">
       <table class="attr">
         <colgroup>
@@ -14,35 +16,35 @@
         </thead>      
         <tr>
           <th><%= label :income1, "売上入金（振込/現金）" %></th>
-          <td><%= text_field :income1, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income1.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income2, "売上入金（手形決済）" %></th>
-          <td><%= text_field :income2, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income2.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income3, "受取利息" %></th>
-          <td><%= text_field :income3, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income3.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income4, "借入金" %></th>
-          <td><%= text_field :income4, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income4.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income5, "その他収入" %></th>
-          <td><%= text_field :income5, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income5.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income6, "収入6" %></th>
-          <td><%= text_field :income6, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income6.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income7, "収入7" %></th>
-          <td><%= text_field :income7, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income7.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
         <tr>
           <th><%= label :income_total, "収入合計" %></th>
-          <td><%= text_field :income_total, size: 8, class:"input" %>円</td>
+          <td><%= @flow.income_total.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
       </table>
     </div>
@@ -61,41 +63,41 @@
           </thead>
           <tr>
             <th><%= label :expense1, "仕入支払" %></th>
-            <td><%= text_field :expense1, size: 8, class:"input_main" %>円</td>
+            <td><%= @flow.expense1.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense2, "人件費" %></th>
-            <td><%= text_field :expense2, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense2.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense3, "支払手数料/利息" %></th>
-            <td><%= text_field :expense3, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense3.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense4, "水道光熱費" %></th>
-            <td><%= text_field :expense4, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense4.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense5, "通信費" %></th>
-            <td><%= text_field :expense5, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense5.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense6, "借入返済" %></th>
-            <td><%= text_field :expense6, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense6.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense6, "その他支払" %></th>
-            <td><%= text_field :expense6, size: 8, class:"input" %>円</td>
+            <th><%= label :expense7, "その他支払" %></th>
+            <td><%= @flow.expense7.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
             <th><%= label :expense_total, "支出合計" %></th>
-            <td><%= text_field :expense_total, size: 8, class:"input" %>円</td>
+            <td><%= @flow.expense_total.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
-        </table>        
-      </div>
+      </table>        
+    </div>
 
       <div class="main_flow_termflow">
-        <table class="attr_termflow">
+        <table class="attr2">
           <colgroup>
               <col style="width:55%;">
               <col style="width:45%;">
@@ -108,17 +110,16 @@
           </thead>  
           <tr>
             <th><%= label :termflow1, "指定期間前の収支残高①" %></th>
-            <td><%= text_field :termflow1, size: 8, class:"input" %>円</td>
+            <td> 1,000,000円 </td>
           </tr>
           <tr>
             <th><%= label :termflow2, "指定期間中の収支額②" %></th>
-            <td><%= text_field :termflow2, size: 8, class:"input" %>円</td>         
+            <td><%= (@flow.income_total - @flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>         
           </tr>
           <tr>
             <th><%= label :termflow3, "指定期間後の収支残高(①＋②）" %></th>
-            <td><%= text_field :termflow3, size: 8, class:"input" %>円</td>        
+            <td><%= (1000000 + @flow.income_total - @flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>        
           </tr>
         </table>
       </div>          
 </div>
- 

@@ -1,19 +1,10 @@
 <div class="side_bar">
 
   <div class="side_bar_upper">
-    <%= date_select :registrationday,
-        start_year: 2020, end_year: Time.current.year,
-        use_month_numbers: true %>
-        
-
-
-  
-
+    <% if user_signed_in? && current_user.id %>
+      <%= link_to '登録する', new_flow_path, method: :get,class: 'btn btn-default' %>  
+    <% end %> 
   </div>
-  <div class="sidebar_under"> 
+  <div class="side_bar_under"> 
   </div>
-
-
-
-
 </div>
