@@ -1,6 +1,6 @@
 <div class="main_flow">
     <div class="registration_show">
-      <%= @flow.year_month_day.strftime("%Y年%m月%d日") %>
+      <%= @flow.year_month_day&.strftime("%Y年%-m月%-d日") %>
     </div>
     <div class="main_flow_income">
       <table class="attr">

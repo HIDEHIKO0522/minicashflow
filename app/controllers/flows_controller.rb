@@ -16,7 +16,7 @@ class FlowsController < ApplicationController
       flash.now[:notice] = '登録に成功しました。'
       render 'show' #成功の場合
     else   #失敗の場合
-      flash.now[:alert] = '登録に失敗しました'
+      flash.now[:alert] = 'この日付には既にデータが登録されています。'
       render 'new' 
     end 
   end     
