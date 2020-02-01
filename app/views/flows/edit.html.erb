@@ -1,6 +1,12 @@
-
-  <div class="main_flow">
-  <h1>トップ画面</h1>
+<div class="main_flow">
+  <%= form_for @flow do |form| %>
+    <div class="registration">
+      <%= label :registration_day, "登録日" %>
+      <%= form.date_select :year_month_day,
+        start_year: 2020, 
+        end_year: (Time.current.year + 1),
+        use_month_numbers: true %>
+    </div>
     <div class="main_flow_income">
       <table class="attr">
         <colgroup>
@@ -14,36 +20,32 @@
           </tr>
         </thead>      
         <tr>
-          <th><%= label :income1, "売上入金（振込/現金）"%></th>
-          <td><%= text_field :income1, size: 8, class:"input" %>円</td>
+          <th><%= label :income1, "売上入金（振込/現金）" %></th>
+          <td><%= form.text_field :income1, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income2, "売上入金（手形決済）" %></th>
-          <td><%= text_field :income2, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income2, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income3, "受取利息" %></th>
-          <td><%= text_field :income3, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income3, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income4, "借入金" %></th>
-          <td><%= text_field :income4, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income4, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income5, "その他収入" %></th>
-          <td><%= text_field :income5, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income5, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income6, "収入6" %></th>
-          <td><%= text_field :income6, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income6, size: 8, class:"input" %>円</td>
         </tr>
         <tr>
           <th><%= label :income7, "収入7" %></th>
-          <td><%= text_field :income7, size: 8, class:"input" %>円</td>
-        </tr>
-        <tr>
-          <th><%= label :income_total, "収入合計" %></th>
-          <td><%= text_field :income_total, size: 8, class:"input" %>円</td>
+          <td><%= form.text_field :income7, size: 8, class:"input" %>円</td>
         </tr>
       </table>
     </div>
@@ -62,37 +64,36 @@
           </thead>
           <tr>
             <th><%= label :expense1, "仕入支払" %></th>
-            <td><%= text_field :expense1, size: 8, class:"input_main" %>円</td>
+            <td><%= form.text_field :expense1, size: 8, class:"input_main" %>円</td>
           </tr>
           <tr>
             <th><%= label :expense2, "人件費" %></th>
-            <td><%= text_field :expense2, size: 8, class:"input" %>円</td>
+            <td><%= form.text_field :expense2, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
             <th><%= label :expense3, "支払手数料/利息" %></th>
-            <td><%= text_field :expense3, size: 8, class:"input" %>円</td>
+            <td><%= form.text_field :expense3, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
             <th><%= label :expense4, "水道光熱費" %></th>
-            <td><%= text_field :expense4, size: 8, class:"input" %>円</td>
+            <td><%= form.text_field :expense4, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
             <th><%= label :expense5, "通信費" %></th>
-            <td><%= text_field :expense5, size: 8, class:"input" %>円</td>
+            <td><%= form.text_field :expense5, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
             <th><%= label :expense6, "借入返済" %></th>
-            <td><%= text_field :expense6, size: 8, class:"input" %>円</td>
+            <td><%= form.text_field :expense6, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense6, "その他支払" %></th>
-            <td><%= text_field :expense6, size: 8, class:"input" %>円</td>
-          </tr>
-          <tr>
-            <th><%= label :expense_total, "支出合計" %></th>
-            <td><%= text_field :expense_total, size: 8, class:"input" %>円</td>
+            <th><%= label :expense7, "その他支払" %></th>
+            <td><%= form.text_field :expense7, size: 8, class:"input" %>円</td>
           </tr>
         </table>        
-      </div> 
-</div>
- 
+      </div>
+      <div class="submit">
+         <%= form.submit  value="編集する",class: 'btn btn-default' %>
+     </div>  
+   <% end %>   
+</div>      

@@ -20,7 +20,8 @@ class CreateFlows < ActiveRecord::Migration[5.2]
       t.integer :expense8,       default: "0"
       t.integer :expense_total,  null: false
       t.timestamps
-
+      
     end
+    add_index :flows, :year_month_day,    unique: true
   end
 end

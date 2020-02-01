@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "modules/flash";
 /* ページ全体 */
 body {
   background-color: white;
@@ -55,22 +56,20 @@ div#container {
   width: 1300px;
   height: 600px;
 
-/* 左の枠（サイドバーを入れる） */
-aside#sidebar {
-  float: left;
-  width: 240px;
-  height:650px;
-  background-color: #e8ffff;
-  padding: 10px;
-  font-size: 86%;
+  /* 左の枠（サイドバーを入れる） */
+  aside#sidebar {
+    float: left;
+    width: 240px;
+    height:650px;
+    background-color: #e8ffff;
+    padding: 10px;
+    font-size: 86%;
 
-  .side_bar {
-   margin-top: 40px; 
+    .side_bar {
+    margin-top: 40px; 
+    }
   }
-
-
-}
-/* 左の枠（コンテンツを入れる） */
+  /* 左の枠（コンテンツを入れる） */
   main#mainbar {
     float: left;
     width: 1000px;
@@ -82,6 +81,22 @@ aside#sidebar {
       height:600px; 
       position: relative; 
 
+      .registration{
+          height:50px;
+
+          .registration_label{
+            background-color: #6bb;
+            color: #fff;
+            height: 50px;
+            font-size: 25px;
+            line-height:50px;
+          }
+      }  
+      .registration_show{
+        height:50px;
+        font-size: 25px;
+        font-weight: bold;
+      } 
       .main_flow_income{
         width: 420px;
         height:400px;
@@ -101,150 +116,161 @@ aside#sidebar {
         width: 420px;
         height:500px;
         float: right;
-      }
+      } 
+    }
+  }
+  /* 登録日*/
+  select#flow_year_month_day_1i { 
+    height: 30px;      
+    color: #000; 
+  }
+  select#flow_year_month_day_2i { 
+    height: 30px;      
+    color: #000; 
+  }
+  select#flow_year_month_day_3i { 
+    height: 30px;      
+    color: #000; 
+  }
+  /* ヘッダー */
+  header {
+    border-top: 4px solid #6bb;
+    padding-top: 4px;
+  }
+
+  ul.account-menu {
+    text-align: right;
+  }
+
+  /* フッター */
+  footer {
+    clear: both;
+    font: 11px Verdana;
+    color: #888;
+    padding: 8px 0;
+    border-top: 4px solid #6bb;
+    text-align: center;
+  }
+
+  footer nav ul li:not(:last-child):after {
+    color: #888;
+    content: " | ";
+    margin: 0 5px;
+  }
+
+  /* メニューバー */
+  nav.menubar {
+    padding: 2px;
+    background-color: #000;
+    color: #ccc;
+    font-size: 80%;
+    padding: 8px 16px;
+  }
+
+  nav.menubar ul li:not(:last-child):after {
+    color: #ccc;
+    content: " | ";
+    margin: 0 2px;
+  }
+
+  /* メニューバーのリンク */
+  nav.menubar a { 
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  /* メニューバーのリンク（未訪問） */
+  nav.menubar a:link { color: #ccc; }
+
+  /* メニューバーのリンク（訪問済） */
+  nav.menubar a:visited { color: #ccc; }
+
+  /* メニューバーのリンク（マウスを合わせたとき） */
+  nav.menubar a:hover {
+    color: #f88;
+    text-decoration: underline;
+  }
+
+  /* メニューバーのリンク（現在のページ） */
+  nav.menubar span {
+    color: #ff8;
+    font-weight: bold;
+  }
+
+  /* メインコンテンツ */
+  main h1 {
+    color: #88c;
+    font-weight: normal;
+    font-size: 150%;
+    border-bottom: 2px solid #88c;
+    margin-bottom: 0.5em;
+  }
+
+  main h2 {
+    color: #99d;
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #ccf;
+  }
+
+  main p {
+    font-size: 90%;
+    line-height: 1.5;
+  }
+
+  ul.toolbar,
+  div.toolbar {
+    padding: 15px 0;
+    font-size: 90%;
+    text-align: right;
+  }
+
+  ul.toolbar li:not(:last-child):after {
+    color: #888;
+    content: " | ";
+    margin: 0 2px;
+  }
+
+  /* サイドバー */
+  aside#sidebar h2 {
+    color: #080;
+    font-weight: bold;
+    border-bottom: 1px dotted #080;
+    margin-bottom: 0.5em;
+    font-size: 100%;
+  }
+
+  aside#sidebar ul {
+    padding-left: 1em;
+    list-style-type: none;
+  }
+
+  aside#sidebar li {
+    margin-bottom: 0.3em;
+  }
+  /* 入力フォームのtext_field */
+  input {
+    width:150px;
+    text-align: right; 
+  }
+
+  .btn {
+    background: #fff8e8;
+    Padding: 5px 15px ;
+    font-size: 12px;
+    border: 2px solid #57C3E9;
+    color: #253141;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline-block;
+    
+    &:hover {
+      border-color: lighten(#57C3E9, 15%);
+      color: #800080;
     }
   }
 }
-
-/* ヘッダー */
-header {
-  border-top: 4px solid #6bb;
-  padding-top: 4px;
-}
-
-ul.account-menu {
-  text-align: right;
-}
-
-/* フッター */
-footer {
-  clear: both;
-  font: 11px Verdana;
-  color: #888;
-  padding: 8px 0;
-  border-top: 4px solid #6bb;
-  text-align: center;
-}
-
-footer nav ul li:not(:last-child):after {
-  color: #888;
-  content: " | ";
-  margin: 0 5px;
-}
-
-/* メニューバー */
-nav.menubar {
-  padding: 2px;
-  background-color: #000;
-  color: #ccc;
-  font-size: 80%;
-  padding: 8px 16px;
-}
-
-nav.menubar ul li:not(:last-child):after {
-  color: #ccc;
-  content: " | ";
-  margin: 0 2px;
-}
-
-/* メニューバーのリンク */
-nav.menubar a { 
-  text-decoration: none;
-  margin-right: 20px;
- }
-
-/* メニューバーのリンク（未訪問） */
-nav.menubar a:link { color: #ccc; }
-
-/* メニューバーのリンク（訪問済） */
-nav.menubar a:visited { color: #ccc; }
-
-/* メニューバーのリンク（マウスを合わせたとき） */
-nav.menubar a:hover {
-  color: #f88;
-  text-decoration: underline;
-}
-
-/* メニューバーのリンク（現在のページ） */
-nav.menubar span {
-  color: #ff8;
-  font-weight: bold;
-}
-
-/* メインコンテンツ */
-main h1 {
-  color: #88c;
-  font-weight: normal;
-  font-size: 150%;
-  border-bottom: 2px solid #88c;
-  margin-bottom: 0.5em;
-}
-
-main h2 {
-  color: #99d;
-  font-weight: bold;
-  font-size: 120%;
-  margin-bottom: 0.5em;
-  border-bottom: 1px solid #ccf;
-}
-
-main p {
-  font-size: 90%;
-  line-height: 1.5;
-}
-
-ul.toolbar,
-div.toolbar {
-  padding: 15px 0;
-  font-size: 90%;
-  text-align: right;
-}
-
-ul.toolbar li:not(:last-child):after {
-  color: #888;
-  content: " | ";
-  margin: 0 2px;
-}
-
-/* サイドバー */
-aside#sidebar h2 {
-  color: #080;
-  font-weight: bold;
-  border-bottom: 1px dotted #080;
-  margin-bottom: 0.5em;
-  font-size: 100%;
-}
-
-aside#sidebar ul {
-  padding-left: 1em;
-  list-style-type: none;
-}
-
-aside#sidebar li {
-  margin-bottom: 0.3em;
-}
-/* 入力フォームのtext_field */
-input {
-  width:150px;
-  text-align: right; 
-}
-
-.btn {
-  background: #fff8e8;
-  Padding: 5px 15px ;
-  font-size: 12px;
-  border: 2px solid #57C3E9;
-  color: #253141;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 3px;
-  display: inline-block;
-  
-  &:hover {
-    border-color: lighten(#57C3E9, 15%);
-    color: #800080;
-  }
-}
-
 

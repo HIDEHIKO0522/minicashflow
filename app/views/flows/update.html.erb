@@ -1,6 +1,7 @@
 <div class="main_flow">
-    <div class="registration_show">
-      <%= @flow.year_month_day.strftime("%Y年%m月%d日") %>
+    <h2>更新完了しました</h2>
+    <div class="registration">
+      <%= flow.year_month_day %>
     </div>
     <div class="main_flow_income">
       <table class="attr">
@@ -113,8 +114,6 @@
             <td><%= (@flow.income_total - @flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>         
           </tr>
         </table>
-        <%= link_to '編集する', "/flows/#{@flow.id}/edit", method: :get,class: 'btn btn-default' %> 
-        <%= link_to '削除する', "/flows/#{@flow.id}", method: :delete,class: 'btn btn-default' %> 
-        <%= link_to 'トップに戻る', root_path, method: :get,class: 'btn btn-default' %> 
+        <%= link_to 'トップ画面に戻る', root_path, method: :get,class: 'btn btn-default' %> 
       </div>          
 </div>

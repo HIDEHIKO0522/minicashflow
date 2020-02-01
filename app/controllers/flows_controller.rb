@@ -1,5 +1,7 @@
 class FlowsController < ApplicationController
 
+  before_action :set_flow, only: [:edit, :show, :update]
+
   def index
   end
   
@@ -8,20 +10,50 @@ class FlowsController < ApplicationController
   end
   
   def create
-    @flow = Flow.create(flow_params)
+    @flow = Flow.new(flow_params)
     
     if @flow.save 
-      flash.now[:alert] = '登録に成功しました。'
+      flash.now[:notice] = '登録に成功しました。'
       render 'show' #成功の場合
     else   #失敗の場合
-      flash.now[:alert] = '登録に失敗しました。'
+      flash.now[:alert] = '登録に失敗しました'
       render 'new' 
     end 
   end     
 
   def show
-    @flow = Flow.find(params[:id])
   end 
+
+  def destroy
+    flow = Flow.find(params[:id])
+     if flow.destroy
+      flash.now[:notice] = 'データを削除しました'
+      render 'destroy'
+     else
+      flash.now[:alert] = 'データ削除に失敗しました'
+      render 'show'
+     end 
+  end   
+
+  def edit
+  end  
+
+  def update
+    if @flow.update(flow_params)
+      flash.now[:notice] = '編集に成功しました。'
+      render 'show' 
+    else
+      render 'edit'
+    end  
+  end
+ 
+
+
+
+  def set_flow #showとedit,#updateでの処理
+    @flow = Flow.find(params[:id]) 
+  end
+
 
 
   private

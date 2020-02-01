@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_062316) do
     t.integer "expense_total", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["year_month_day"], name: "index_flows_on_year_month_day", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -18,10 +18,11 @@
         <%= render "shared/side_bar" %>      
       </aside>
       <main id="mainbar">
+        <%= render "layouts/notifications" %>    
         <%= yield %>
       </main>
       <footer>
-        <%= render "shared/footer" %>          
+        <%= render "shared/footer" %> 
       </footer>
     </div>
   </body>
