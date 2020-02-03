@@ -111,3 +111,40 @@ table.list td, table.attr3 td {
 table.thread td, table.attr3 th {
   text-align: center;
 }
+
+/* month_dataでのフォーム */
+table.list, table.attr4 {
+  font-size: 70%;
+  width: 100%;
+
+}
+
+table.list th, table.attr4 th {
+  background-color:#38aef0;
+  color: white;
+  font-weight: normal;
+}
+
+table.list td, table.list th,
+table.attr4 td, table.attr4 th {
+  padding: 4px;
+  text-align: right;
+  border: thin #000 solid;  
+}
+
+table.list th {
+  text-align: left;
+}
+
+table.attr4 th {
+  text-align: right;
+}
+
+table.list td, table.attr4 td {
+  background-color: #CCFFFF;
+  text-align: right;
+}
+
+table.thread td, table.attr4 th {
+  text-align: center;
+}

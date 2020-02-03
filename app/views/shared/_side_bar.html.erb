@@ -19,7 +19,7 @@
     <h2>データ集計(月別)</h2>
     <div class="registration_search">  
       <% if user_signed_in? && current_user.id %>
-        <%= link_to '集計する',  flows_path, method: :get,class: 'btn btn-default' %>
+        <%= link_to '集計する',  root_path, method: :get,class: 'btn btn-default' %>
       <% end %>    
     </div>  
   </div> 
