@@ -3,7 +3,12 @@ class FlowsController < ApplicationController
   before_action :set_flow, only: [:edit, :show, :update]
 
   def index
-  end
+    @q = Flow.ransack(params[:q])
+    @flows = @q.result(distinct: true)
+    @flows = Flow.order("year_month_day DESC").page(params[:page]).per(10)
+  end  
+
+
   
   def new
       @flow = Flow.new
@@ -46,15 +51,10 @@ class FlowsController < ApplicationController
       render 'edit'
     end  
   end
- 
-
-
 
   def set_flow #showとedit,#updateでの処理
     @flow = Flow.find(params[:id]) 
   end
-
-
 
   private
   def flow_params

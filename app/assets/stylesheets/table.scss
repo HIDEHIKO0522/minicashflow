@@ -73,3 +73,41 @@ table.list td, table.attr2 td {
 table.thread td, table.attr2 th {
   text-align: center;
 }
+
+/* searchでのフォーム */
+table.list, table.attr3 {
+  font-size: 90%;
+  width: 100%;
+
+}
+
+table.list th, table.attr3 th {
+  background-color:#38aef0;
+  color: white;
+  font-weight: normal;
+}
+
+table.list td, table.list th,
+table.attr3 td, table.attr3 th {
+  padding: 4px;
+  text-align: right;
+  border: thin #000 solid;  
+}
+
+table.list th {
+  text-align: left;
+}
+
+table.attr3 th {
+  text-align: right;
+}
+
+table.list td, table.attr3 td {
+  background-color: #CCFFFF;
+  text-align: right;
+  padding-right: 20px;
+}
+
+table.thread td, table.attr3 th {
+  text-align: center;
+}

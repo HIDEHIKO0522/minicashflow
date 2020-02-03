@@ -1,0 +1,2 @@
+module Flows::SearchesHelper
+end

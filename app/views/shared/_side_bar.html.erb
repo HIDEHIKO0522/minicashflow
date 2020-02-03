@@ -6,10 +6,21 @@
       <%= link_to '入力する', new_flow_path, method: :get,class: 'btn btn-default' %>  
     <% end %> 
   </div>
-  <div class="side_bar_under"> 
+
+  <div class="side_bar_middle"> 
     <h2>データ検索</h2>
-    <%# <% if user_signed_in? && current_user.id %> 
-
-
-  </div>
+    <div class="registration_search">  
+      <% if user_signed_in? && current_user.id %>
+        <%= link_to '検索する',  flows_path, method: :get,class: 'btn btn-default' %>
+      <% end %>    
+    </div>  
+  </div> 
+   <div class="side_bar_under"> 
+    <h2>データ集計(月別)</h2>
+    <div class="registration_search">  
+      <% if user_signed_in? && current_user.id %>
+        <%= link_to '集計する',  flows_path, method: :get,class: 'btn btn-default' %>
+      <% end %>    
+    </div>  
+  </div> 
 </div>
