@@ -1,11 +1,12 @@
 <div class="main_flow">
   <%= form_for @flow do |form| %>
     <div class="registration">
-      <%= label :registration_day, "登録日", class:"registration_label" %>
-      <%= form.date_select :year_month_day,
+      <%= form.label :registration_day, "登録日", class:"registration_label" %>
+      <%= form.date_field :year_month_day %>
+      <%# %= form.date_select :year_month_day,
         start_year: 2020, 
         end_year: (Time.current.year),
-        use_month_numbers: true %>
+        use_month_numbers: true % %>
     </div>
     <div class="main_flow_income">
       <table class="attr">
@@ -71,15 +72,15 @@
             <td><%= form.text_field :expense2, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense3, "支払手数料/利息" %></th>
+            <th><%= label :expense3, "家賃支払" %></th>
             <td><%= form.text_field :expense3, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense4, "水道光熱費" %></th>
+            <th><%= label :expense4, "水道光熱費/通信費" %></th>
             <td><%= form.text_field :expense4, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense5, "通信費" %></th>
+            <th><%= label :expense5, "税金支払" %></th>
             <td><%= form.text_field :expense5, size: 8, class:"input" %>円</td>
           </tr>
           <tr>
@@ -94,6 +95,7 @@
       </div>
       <div class="submit">
          <%= form.submit  value="登録する",class: 'btn btn-default' %>
+         <%= link_to 'やり直す', new_flow_path, method: :get,class: 'btn btn-default' %> 
      </div>
    <% end %>   
 </div>      

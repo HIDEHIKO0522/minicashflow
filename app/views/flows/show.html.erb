@@ -70,15 +70,15 @@
             <td><%= @flow.expense2.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense3, "支払手数料/利息" %></th>
+            <th><%= label :expense3, "家賃支払" %></th>
             <td><%= @flow.expense3.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense4, "水道光熱費" %></th>
+            <th><%= label :expense4, "水道光熱費/通信費" %></th>
             <td><%= @flow.expense4.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
-            <th><%= label :expense5, "通信費" %></th>
+            <th><%= label :expense5, "税金支払" %></th>
             <td><%= @flow.expense5.to_s(:delimited, delimiter: ',') %>円</td>
           </tr>
           <tr>
@@ -109,7 +109,7 @@
             </tr>
           </thead>  
           <tr>
-            <th><%= label :termflow2, "指定期間中の収支額" %></th>
+            <th><%= label :termflow2, "収支額" %></th>
             <td><%= (@flow.income_total - @flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>         
           </tr>
         </table>

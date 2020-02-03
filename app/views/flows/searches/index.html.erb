@@ -1,0 +1,35 @@
+<div class="main_flow">
+
+  <%= link_to '検索画面に戻る',  flows_path, method: :get,class: 'btn btn-default' %>
+  <%= link_to 'トップ画面に戻る', root_path, method: :get,class: 'btn btn-default' %> 
+  <div class="main_flow_search">
+    <table class="attr3">
+      <colgroup>
+          <col style="width:15%;">
+          <col style="width:15%;">
+          <col style="width:25%;">
+          <col style="width:25%;">
+          <col style="width:25%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>内訳確認</th>
+          <th>日付</th>
+          <th>収入合計</th> 
+          <th>支出合計</th>     
+          <th>収支額</th>         
+        </tr>
+      </thead>
+      <% @flows_search.each do |flow| %>       
+          <tr>
+            <td><%= link_to '内訳を見る', "/flows/#{flow.id}", method: :get,class: 'btn btn-default' %> </td>
+            <td><%= flow.year_month_day&.strftime("%Y年%-m月%-d日") %></td>
+            <td><%= flow.income_total.to_s(:delimited, delimiter: ',') %>円</td>
+            <td><%= flow.expense_total.to_s(:delimited, delimiter: ',') %>円</td>
+            <td><%= (flow.income_total - flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+      <% end %>     
+    </table>
+      <%= paginate(@flows_search) %> 
+  </div>  
+</div>
