@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :searches, only: :index
   end 
 
-  resources :flows
+  resources :flows do
+    collection do
+      get 'report' 
+    end 
+  end     
 end
