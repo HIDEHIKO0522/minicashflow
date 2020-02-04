@@ -74,3 +74,5 @@ end
 gem 'devise'
 gem 'kaminari'
 gem 'ransack'
+gem 'chart-js-rails', '~> 0.1.4'
+gem 'gon', '~> 6.2.0'
