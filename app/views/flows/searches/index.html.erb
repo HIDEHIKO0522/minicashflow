@@ -1,35 +1,126 @@
-<div class="main_flow">
-
-  <%= link_to '検索画面に戻る',  flows_path, method: :get,class: 'btn btn-default' %>
-  <%= link_to 'トップ画面に戻る', root_path, method: :get,class: 'btn btn-default' %> 
-  <div class="main_flow_search">
-    <table class="attr3">
-      <colgroup>
-          <col style="width:15%;">
-          <col style="width:15%;">
-          <col style="width:25%;">
-          <col style="width:25%;">
-          <col style="width:25%;">
-      </colgroup>
-      <thead>
-        <tr>
-          <th>内訳確認</th>
-          <th>日付</th>
-          <th>収入合計</th> 
-          <th>支出合計</th>     
-          <th>収支額</th>         
-        </tr>
-      </thead>
-      <% @flows_search.each do |flow| %>       
+<div class="main_flow">  
+  <% @flow_search.each do |flow| %>  
+    <div class="registration_show">   
+      <%= flow.year_month_day&.strftime("%Y年%-m月%-d日") %>
+    </div>
+    <div class="main_flow_income">
+      <table class="attr">
+        <colgroup>
+            <col style="width:50%;">
+            <col style="width:50%;">
+        </colgroup>
+        <thead>
           <tr>
-            <td><%= link_to '内訳を見る', "/flows/#{flow.id}", method: :get,class: 'btn btn-default' %> </td>
-            <td><%= flow.year_month_day&.strftime("%Y年%-m月%-d日") %></td>
-            <td><%= flow.income_total.to_s(:delimited, delimiter: ',') %>円</td>
-            <td><%= flow.expense_total.to_s(:delimited, delimiter: ',') %>円</td>
-            <td><%= (flow.income_total - flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>
+            <th>項目</th>
+            <th>金額</th>     
           </tr>
-      <% end %>     
-    </table>
-      <%= paginate(@flows_search) %> 
-  </div>  
+        </thead>      
+        <tr>
+          <th><%= label :income1, "売上入金（振込/現金）" %></th>
+          <td><%= flow.income1.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income2, "売上入金（手形決済）" %></th>
+          <td><%= flow.income2.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income3, "受取利息" %></th>
+          <td><%= flow.income3.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income4, "借入金" %></th>
+          <td><%= flow.income4.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income5, "その他収入" %></th>
+          <td><%= flow.income5.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income6, "収入6" %></th>
+          <td><%= flow.income6.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income7, "収入7" %></th>
+          <td><%= flow.income7.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+        <tr>
+          <th><%= label :income_total, "収入合計" %></th>
+          <td><%= flow.income_total.to_s(:delimited, delimiter: ',') %>円</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="main_flow_expense">
+      <table class="attr">
+          <colgroup>
+              <col style="width:50%;">
+              <col style="width:50%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>金額</th>   
+            </tr>
+          </thead>
+          <tr>
+            <th><%= label :expense1, "仕入支払" %></th>
+            <td><%= flow.expense1.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense2, "人件費" %></th>
+            <td><%= flow.expense2.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense3, "家賃支払" %></th>
+            <td><%= flow.expense3.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense4, "水道光熱費/通信費" %></th>
+            <td><%= flow.expense4.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense5, "税金支払" %></th>
+            <td><%= flow.expense5.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense6, "借入返済" %></th>
+            <td><%= flow.expense6.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense7, "その他支払" %></th>
+            <td><%= flow.expense7.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+          <tr>
+            <th><%= label :expense_total, "支出合計" %></th>
+            <td><%= flow.expense_total.to_s(:delimited, delimiter: ',') %>円</td>
+          </tr>
+      </table>        
+    </div>
+
+      <div class="main_flow_termflow">
+        <table class="attr2">
+          <colgroup>
+              <col style="width:55%;">
+              <col style="width:45%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>金額</th>     
+            </tr>
+          </thead>  
+          <tr>
+            <th><%= label :termflow2, "収支額" %></th>
+            <td><%= (flow.income_total - flow.expense_total).to_s(:delimited, delimiter: ',') %>円</td>         
+          </tr>
+         
+        </table>   
+        <%= link_to '編集する', "/flows/#{flow.id}/edit", method: :get,class: 'btn btn-default' %> 
+        <%= link_to '削除する', "/flows/#{flow.id}", method: :delete,class: 'btn btn-default' %> 
+        <%= link_to 'トップに戻る', root_path, method: :get,class: 'btn btn-default' %> 
+      </div> 
+  <% end %>  
+
+
 </div>
+
