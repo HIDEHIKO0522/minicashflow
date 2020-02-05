@@ -14,6 +14,9 @@
  *= require_self
  */
  @import "modules/flash";
+ @import "./sessions";
+ @import "./registrations";
+ 
 /* ページ全体 */
 body {
   background-color: white;
@@ -306,6 +309,27 @@ div#container {
   input {
     width:150px;
     text-align: right; 
+  }
+  /* ログインフォームのtext_field */
+  input[type="email"]{
+    width:300px;
+    text-align: left; 
+  }
+  input[type="password"]{
+    width:300px;
+    text-align: left; 
+  }
+  input[type="submit"]{
+    width:150px;
+    text-align: center; 
+  }
+  input[type="checkbox"]{
+    width:20px;
+    text-align: center; 
+  }
+  input[type="text"]{
+    width:148px;
+    text-align: left; 
   }
 
   .btn {

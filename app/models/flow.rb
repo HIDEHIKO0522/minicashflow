@@ -23,10 +23,4 @@ class Flow < ApplicationRecord
     
   end
 
-    # def self.search(search)
-    #   if search
-    #     Flow.where('year_month_day LIKE(?)', "%#{search}%")
-    #   end
-    #   Flow.all
-    # end
 end
