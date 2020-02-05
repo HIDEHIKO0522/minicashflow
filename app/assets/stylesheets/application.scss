@@ -16,6 +16,13 @@
  @import "modules/flash";
  @import "./sessions";
  @import "./registrations";
+ @font-face {
+  font-family: 'ほのか明朝';
+  src: url('font_1_honokamin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
  
 /* ページ全体 */
 body {
@@ -125,6 +132,26 @@ div#container {
         font-weight: bold;
 
       } 
+      .main_flow_top-after {
+        width: 800px;
+        height:400px;
+        margin:  auto;
+        font-size: 100px;
+        color: #6bb;
+        line-height: 100px; 
+        text-align: center; 
+        padding-top: 50px;  
+      }
+      .main_flow_top-before {
+        width: 800px;
+        height:400px;
+        margin:  auto;
+        font-size: 20px;
+        color: #6bb;
+        line-height: 20px; 
+        text-align: left; 
+        padding-top: 50px;  
+      }
       .main_flow_income{
         width: 420px;
         height:400px;

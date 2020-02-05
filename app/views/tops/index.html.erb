@@ -1,4 +1,12 @@
 <div class="main_flow">
-    <h1>トップ画面</h1>
-</div>
- 
+　<div class="main_flow_top-after">  
+    <% if user_signed_in? && current_user.id %>
+        <p>Mini Cash Flow</p>
+  </div>      
+    <% else %>
+  <div class="main_flow_top-before">  
+        <p>アカウントをお持ちの方：上段のバー「ログイン」にてログインしてください</p>
+        <p>アカウントを持っていない方：上段のバー「新規登録」にてアカウント作成してください</p> <br> 
+    <% end %> 
+　</div>
+ </div>
