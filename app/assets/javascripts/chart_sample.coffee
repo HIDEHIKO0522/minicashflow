@@ -11,12 +11,12 @@ window.draw_graph = ->
 
     for i in [0...barNum]
         labels[i] = i+1 +'月'
-        bgColors_income[i] = 'rgba(255, 99, 132, 0.2)'
-        bdColors_income[i] = 'rgba(255, 99, 132, 0.5)'
-        bgColors_expense[i] = 'rgba(54, 162, 235, 0.2)'
-        bdColors_expense[i] = 'rgba(54, 162, 235, 0.5)'
+        bgColors_income[i] = 'rgba(255, 99, 132, 1.0)'
+        bdColors_income[i] = 'rgba(255, 99, 132, 1.0)'
+        bgColors_expense[i] = 'rgba(54, 162, 235, 1.0)'
+        bdColors_expense[i] = 'rgba(54, 162, 235, 1.0)'
         bgColors_carryover[i] = 'rgba(75, 192, 192, 0.2)'
-        bdColors_carryover[i] = 'rgba(75, 192, 192, 0.5)'
+        bdColors_carryover[i] = 'rgba(75, 192, 192, 1.0)'
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {

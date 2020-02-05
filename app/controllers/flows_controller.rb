@@ -43,9 +43,10 @@ class FlowsController < ApplicationController
 
   def update
     if @flow.update(flow_params)
-      flash.now[:notice] = '編集に成功しました。'
+      flash.now[:notice] = '編集に成功しました'
       render 'show' 
     else
+      flash.now[:alert] = '編集に失敗しました。全項目に入力してください'
       render 'edit'
     end  
   end
@@ -58,7 +59,7 @@ class FlowsController < ApplicationController
     @flow_income_total_jan = @flows.sum(:income_total)
     @flow_expense_total_jan = @flows.sum(:expense_total)
     @flow_balance_total_jan = ( @flow_income_total_jan - @flow_expense_total_jan )
-    @flow_carryover_jan = 1000000 + @flow_balance_total_jan
+    @flow_carryover_jan = 5000000 + @flow_balance_total_jan
 
     # 2月集計
     @from = Date.new(2020, 02 ,01)
