@@ -6,6 +6,7 @@ class FlowsController < ApplicationController
     @q = Flow.ransack(params[:q])
     @flows = @q.result(distinct: true)
     @flows = Flow.order("year_month_day DESC").page(params[:page]).per(10)
+    
   end  
 
   def new
@@ -16,10 +17,10 @@ class FlowsController < ApplicationController
     @flow = Flow.new(flow_params)
     
     if @flow.save 
-      flash.now[:notice] = '登録に成功しました。'
+      flash.now[:notice] = '登録に成功しました'
       render 'show' #成功の場合
     else   #失敗の場合
-      flash.now[:alert] = 'この日付には既にデータが登録されています。'
+      flash.now[:alert] = 'この日付には既にデータが登録されています'
       render 'new' 
     end 
   end     
