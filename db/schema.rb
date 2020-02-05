@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_062316) do
+ActiveRecord::Schema.define(version: 2020_02_05_141409) do
 
   create_table "flows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "year_month_day", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_062316) do
     t.integer "expense_total", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "text"
     t.index ["year_month_day"], name: "index_flows_on_year_month_day", unique: true
   end
 

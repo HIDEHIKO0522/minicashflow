@@ -219,6 +219,6 @@ class FlowsController < ApplicationController
   private
   def flow_params
     params.require(:flow).permit(:year_month_day, :income1, :income2, :income3, :income4, :income5, :income6, :income7, :income_total,
-                                 :expense1, :expense2, :expense3, :expense4, :expense5, :expense6, :expense7, :expense_total) 
+                                 :expense1, :expense2, :expense3, :expense4, :expense5, :expense6, :expense7, :expense_total, :text) 
   end  
 end
