@@ -3,8 +3,8 @@ class Flows::SearchesController < ApplicationController
   def index
     @q = Flow.ransack(params[:q])
     @flow_search = @q.result(distinct: true)
-      unless @flow_search.present?
-        flash.now[:alert] = 'この日付のデータはありません。'
+      unless @flow_search.exists?
+        flash[:alert] = 'この日付にデータは登録されていません'
         redirect_to flows_path    
       else
      
