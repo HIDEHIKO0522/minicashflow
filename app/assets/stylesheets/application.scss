@@ -323,13 +323,21 @@ div#container {
     width:150px;
     text-align: center; 
   }
+
   input[type="checkbox"]{
     width:20px;
     text-align: center; 
   }
+
   input[type="text"]{
     width:148px;
     text-align: left; 
+  }
+  
+  input[type="number"]{
+    width:150px;
+    font-size: 15px;
+    text-align: right; 
   }
 
   .btn {
