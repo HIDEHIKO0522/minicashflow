@@ -3,7 +3,7 @@
     <%= search_form_for @q, url: flows_searches_path, method: :get, class: "registration_search" do |form| %>
         <%= form.label :year_month_day_eq, "検索日", class:"search_registration_label" %>
         <%= form.date_field :year_month_day_eq %>
-        <%= form.submit "検索", class:'btn btn-default' %>
+        <%= form.submit "検索", class:'btn btn-default' %>      
     <% end %>
   </div>
 
