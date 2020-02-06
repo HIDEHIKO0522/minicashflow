@@ -17,10 +17,10 @@ class FlowsController < ApplicationController
     @flow = Flow.new(flow_params)
     
     if @flow.save 
-      flash.now[:notice] = '登録に成功しました'
+      flash.now[:notice] = '登録に成功しました。'
       render 'show' #成功の場合
     else   #失敗の場合
-      flash.now[:alert] = 'この日付には既にデータが登録されています'
+      flash.now[:alert] = '登録に失敗しました。この日付には既にデータが登録されているか入力漏れがあります。'
       render 'new' 
     end 
   end     

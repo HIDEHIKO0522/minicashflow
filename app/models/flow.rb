@@ -15,6 +15,7 @@ class Flow < ApplicationRecord
   }   
   
   validates :year_month_day, uniqueness: true
+  validates :year_month_day, presence: true
 
   before_save do
     self.income_total = ( income1 + income2 + income3 + income4 + income5 + income6 + income7 )
