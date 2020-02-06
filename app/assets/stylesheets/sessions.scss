@@ -23,7 +23,14 @@ h1 {
   padding-bottom: 4px;
   color: #111111;
 }
-
+h4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  color: #111111;
+}
 .box-email {
   margin-bottom: 13px;
 }
@@ -31,7 +38,6 @@ h1 {
 .box-password {
   margin-bottom: 22px;
 }
-
 .box-email label, .box-password label {
   font-weight: 700;
   font-size: 13px;
@@ -71,14 +77,14 @@ h1 {
   width: 100%;
   height: 31px;
   margin-left: 70px;
-  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  background: linear-gradient(to bottom,#fff8e8,#57C3E9);
   border-radius: 3px;
-  border: 1px #a88734 solid;
+  border: 1px #57C3E9 solid;
 }
 
 .box-login input[type="submit"]:hover {
   cursor: pointer;
-  background: #f0c14b;
+  background: #fff8e8;
 }
 
 

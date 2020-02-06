@@ -29,13 +29,13 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
-      <div class="box-email">
+      <div class="box-password">
         <%= f.label :password,"パスワード(6文字以上）" %>
       
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
 
-      <div class="box-email">
+      <div class="box-password">
         <%= f.label :password_confirmation,"パスワード（確認）" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
@@ -46,4 +46,4 @@
     <% end %>
   </div>  
 </div>
-<%# <%= render "devise/shared/links" %> 
+<%= render "devise/shared/links" %>
