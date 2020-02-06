@@ -6,7 +6,7 @@ class Flows::SearchesController < ApplicationController
         flash[:alert] = 'この日付にデータは登録されていません'
         redirect_to flows_path    
       else
-        render 'show'
+
       end  
   end
 
