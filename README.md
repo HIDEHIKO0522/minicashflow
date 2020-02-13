@@ -1,4 +1,4 @@
-# CashFlow
+# MiniCashFlow
 ![登録画面](registration.png)
 ![集計画面](MiniCashFlow.png)
 ## *作成意図* 
