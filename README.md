@@ -57,51 +57,8 @@
 ![集計画像](report.gif)  
  ***
 
-
-
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|employee_number|integer|null: false|
-|email|string|null: false|
-|password|string|null: false|
-|encrypted_password|string|null: false|
-
-### Association
-なし
-
-## flowsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|year_month_day||null: false,unique: true|
-|income1|integer|default: "0"|
-|income2|integer|default: "0"|
-|income3|integer|default: "0"|
-|income4|integer|default: "0"|
-|income5|integer|default: "0"|
-|income6|integer|default: "0"|
-|income7|integer|default: "0"|
-|income8|integer|default: "0"|
-|income9|integer|default: "0"|
-|income_total|integer|default: ""|
-|expense1|integer|default: "0"|
-|expense2|integer|default: "0"|
-|expense3|integer|default: "0"|
-|expense4|integer|default: "0"|
-|expense5|integer|default: "0"|
-|expense6|integer|default: "0"|
-|expense7|integer|default: "0"|
-|expense8|integer|default: "0"|
-|expense9|integer|default: "0"|
-|expense_total|integer|default: ""|
-|text|string||
-### Association
-なし
-
+## *ER図*
+![ER図](minicashflow_er.png)
 
 
 
