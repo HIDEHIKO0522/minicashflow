@@ -58,7 +58,7 @@
  ***
 
 ## *ER図*
-![ER図](minicashflow_er.png)
+![ER図](minicashflow_ers.png)
 
 
 
