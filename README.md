@@ -1,8 +1,6 @@
 # MiniCashFlow
-![登録画面](registration.png)
-![集計画面](MiniCashFlow.png)
-<png src="画像パス" width="100(px)">
-<png src="画像パス" width="100(px)">
+<img src="https://github.com/HIDEHIKO0522/minicashflow/blob/master/registration.png" width="400(px)">　<img src="https://github.com/HIDEHIKO0522/minicashflow/blob/master/MiniCashFlow.png" width="400(px)">
+  
 ## *作成意図* 
 
   通常エクセルなどの表計算ソフトや経理ソフトで作成することが多い現金収支表ですが、中小、零細企業では下記理由で作成できていないケースが多く見られます。  
